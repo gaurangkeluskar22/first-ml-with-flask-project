@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>CoronaVirus Predection through Symptoms</title>
+
+</head>
+<body>
+    
+        <header style="background-color: #3AAFa9;" >     
+<div class="container">
+    <div class="row">
+        <h2 class="p-3" style="color:white;">ML Based CoronaVirus Prediction through Symptoms</h2>
+    </div>
+</div>   
+</header>
+
+<!---        form      -->
+
+<div class="container">
+  
+  <div class="col-sm-offset-4 col-sm-8" >
+   <h4 class="p-2 badge-danger" style="color:white"> {{ predection_text }} </h4>
+  </div>
+  <form class="form-horizontal mt-2" action="{{ url_for('predict') }}" method="POST">
+    <div class="form-group">
+      <label class="control-label col-sm-12" for="fever">Enter Fever Value between( 98 to 104 )</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" id="fever" placeholder="Enter Fever Value between( 98 to 104 )" name="fever" required>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-12" for="age">Enter Your Age</label>
+        <div class="col-sm-8">
+            <input type="number" class="form-control" id="age" placeholder="Enter Your Age" name="age" required>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-12" for="bodypain">Body Pain ?</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="bodypain" name="bodypain" required>
+                <option value="0">Please Select Option</option>
+                <option value="0"> No </option>
+                <option value="1"> YES </option>
+              </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-12" for="runnynose">Runny Nose ?</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="runnynose" name="runnynose" required>
+                <option value="0">Please Select Option</option>
+                <option value="0"> No </option>
+                <option value="1"> YES </option>
+              </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-12" for="breathing">Do you have Difficulty in Breathing ?</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="breathing" name="breathing" required>
+                <option value="0">Please Select Option</option>
+                <option value="0"> No </option>
+                <option value="1"> YES </option>
+              </select>
+        </div>
+    </div>
+    
+    
+    <div class="form-group">        
+        <div class="col-sm-offset-12 col-sm-12">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </form>
+    
+    </div>
+
+</div>
+
+<!---        form      -->
+
+<footer class="page-footer font-small  pt-4 mt-5" style="background-color: rgb(24, 22, 22);">
+  <div class="container-fluid text-center text-md-left">
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center pb-4" style="color: rgb(167, 158, 158);">© 2020 Copyright: Gaurang.keluskar
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+</body>
+</html>
